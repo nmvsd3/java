@@ -1,28 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import './ViewCriminals.css';
 
 const ViewCriminals = () => {
   const [criminals, setCriminals] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const [error, setError] = useState('');
 
   useEffect(() => {
-    // Fetch criminals from the backend API
-    const fetchCriminals = async () => {
-      try {
-        const response = await axios.get('http://localhost:8080/api/criminals/all');
-        setCriminals(response.data);  // Assuming the API returns an array of criminals
-      } catch (error) {
-        setError('Error fetching criminals data');
-        console.error('There was an error fetching the criminals!', error);
-      }
-    };
-
-    fetchCriminals();
+    const storedCriminals = JSON.parse(localStorage.getItem('criminals')) || [];
+    setCriminals(storedCriminals);
   }, []);
 
-  // Filter criminals based on search input
   const filteredCriminals = criminals.filter(criminal =>
     criminal.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     criminal.address.toLowerCase().includes(searchTerm.toLowerCase())
@@ -38,9 +25,7 @@ const ViewCriminals = () => {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-
-      {error && <p className="error">{error}</p>}
-
+      
       {filteredCriminals.length > 0 ? (
         <table>
           <thead>
