@@ -12,7 +12,6 @@ const AddCriminal = () => {
     identifyingMark: '',
     crimeArea: '',
     attachedCrime: '',
-    photo: null, // State for the photo
   });
 
   const navigate = useNavigate();
@@ -25,27 +24,11 @@ const AddCriminal = () => {
     }));
   };
 
-  const handleFileChange = (e) => {
-    setCriminalData((prevState) => ({
-      ...prevState,
-      photo: e.target.files[0], // Update photo state
-    }));
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = new FormData();
-    for (const key in criminalData) {
-      formData.append(key, criminalData[key]);
-    }
-
     try {
-      const response = await axios.post('http://localhost:8080/api/criminals/add', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
+      const response = await axios.post('http://localhost:8080/api/criminals/add', criminalData);
       if (response.status === 200) {
         alert('Criminal added successfully!');
         navigate('/ViewCriminals');
@@ -137,17 +120,6 @@ const AddCriminal = () => {
             name="attachedCrime"
             value={criminalData.attachedCrime}
             onChange={handleInputChange}
-            required
-          />
-        </div>
-
-        <div className="form-group">
-          <label>Upload Photo:</label>
-          <input
-            type="file"
-            name="photo"
-            accept="image/*"
-            onChange={handleFileChange}
             required
           />
         </div>
