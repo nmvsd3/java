@@ -1,0 +1,120 @@
+.add-criminal-container {
+  width: 900px;
+  height: 75vh; /* Set height to 75% of the viewport height */
+  margin: 0 auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  backdrop-filter: blur(1px); /* Glassy blur effect */
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Soft border */
+  margin-top: 20px;
+  animation: fadeIn 0.8s ease; /* Fade-in animation for the container */
+  overflow-y: auto; /* Allow vertical scrolling if content exceeds height */
+}
+
+/* Fade-in animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 28px; /* Increased font size for prominence */
+}
+
+.criminal-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensure the form takes full height of the container */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Increased spacing between form groups */
+  animation: slideIn 0.5s forwards; /* Slide-in animation for form groups */
+}
+
+/* Slide-in animation keyframes */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 12px; /* Increased padding for better touch targets */
+  border: 1px solid #ccc;
+  border-radius: 6px; /* Rounded corners */
+  font-size: 16px; /* Larger font for readability */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transition for focus effects */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border-color: #007bff; /* Highlight border on focus */
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Soft blue glow */
+}
+
+.submit-btn {
+  padding: 12px; /* Increased padding for better touch targets */
+  background-color: #007bff; /* Bootstrap primary color */
+  color: #fff;
+  border: none;
+  border-radius: 6px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 18px; /* Larger font for prominence */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition effects */
+  animation: bounceIn 0.5s; /* Bounce-in animation */
+}
+
+/* Bounce animation keyframes */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.submit-btn:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+@media (max-width: 600px) {
+  .add-criminal-container {
+    width: 90%; /* Responsive width for smaller screens */
+    padding: 20px; /* Adjust padding */
+  }
+}

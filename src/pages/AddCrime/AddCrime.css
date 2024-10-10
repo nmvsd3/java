@@ -1,0 +1,180 @@
+/* AddCrime.css */
+
+.add-crime-container {
+  width: 900px;
+  height: 75vh; /* Set height to 75% of the viewport height */
+  margin: 0 auto;
+  padding: 30px;
+  background: rgba(249, 249, 249, 0.7); /* Semi-transparent background */
+  backdrop-filter: blur(1px); 
+  border-radius: 12px; /* Slightly rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow for more depth */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Lighter border for glass effect */
+  margin-top: 10px;
+  animation: fadeIn 0.8s ease; /* Fade-in animation for the container */
+  overflow-y: auto; /* Allow vertical scrolling if content exceeds height */
+}
+
+/* Fade-in animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.add-crime-container h2 {
+  text-align: center;
+  font-size: 28px; /* Slightly larger font size */
+  color: black; /* White text for contrast */
+  margin-bottom: 20px;
+  animation: slideIn 0.5s ease; /* Slide-in animation for the heading */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for text */
+}
+
+/* Slide-in animation keyframes */
+@keyframes slideIn {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.crime-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensure the form takes full height of the container */
+  animation: fadeUp 0.6s ease; /* Fade-up animation for the form */
+}
+
+/* Fade-up animation keyframes */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-group {
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group:hover {
+  transform: translateY(-3px); /* Lift effect on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow effect on hover */
+}
+
+.form-group label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: black; /* White text for better visibility */
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px; /* Increased padding for a more spacious feel */
+  border-radius: 6px; /* More rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Light border for a soft look */
+  font-size: 16px;
+  color: #333; /* Dark text for inputs */
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background for inputs */
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #38b2ac; /* Accent color on focus */
+  box-shadow: 0 0 5px rgba(56, 178, 172, 0.5);
+  transform: scale(1.02); /* Slight zoom on focus */
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(0, 0, 0, 0.5); /* Softer placeholder color */
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px; /* Minimum height for the textarea */
+}
+
+.submit-btn {
+  background-color: #38b2ac; /* Button color */
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px;
+  border: none;
+  border-radius: 6px; /* Rounded corners for the button */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  animation: bounceIn 0.8s ease; /* Bounce animation for submit button */
+}
+
+/* Bounce animation keyframes */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.submit-btn:hover {
+  background-color: #319795; /* Darker shade on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.submit-btn:active {
+  background-color: #2c7a7b; /* Darker shade on active */
+  transform: translateY(1px);
+}
+
+/* Success message animation */
+.success-message {
+  color: #38b2ac; /* Success message color */
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 15px;
+  opacity: 0;
+  animation: showSuccess 0.5s ease forwards; /* Fade-in success message */
+}
+
+/* Success message fade-in animation keyframes */
+@keyframes showSuccess {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

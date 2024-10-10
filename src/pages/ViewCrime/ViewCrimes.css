@@ -1,0 +1,80 @@
+.view-crimes-container {
+  max-width: 1000px; /* Set maximum width for container */
+  margin: 20px auto; /* Center align the container */
+  padding: 30px; /* Increased padding for better spacing */
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow for a modern look */
+  background: linear-gradient(135deg, #ffffff 0%, #f1f1f1 100%); /* Subtle gradient background */
+}
+
+h2 {
+  text-align: center; /* Center align the heading */
+  color: #333; /* Dark color for heading */
+  margin-bottom: 20px; /* Space below heading */
+  font-size: 28px; /* Larger font size for prominence */
+}
+
+.search-container {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between input and select */
+  margin-bottom: 20px; /* Space below search container */
+}
+
+.search-container input,
+.search-container select {
+  padding: 12px; /* Increased padding for inputs */
+  border: 2px solid #007bff; /* Thicker border color */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px; /* Font size for input/select */
+  transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.search-container input:focus,
+.search-container select:focus {
+  border-color: #0056b3; /* Darker blue when focused */
+}
+
+table {
+  width: 100%; /* Full width table */
+  border-collapse: collapse; /* Collapse borders */
+  margin-top: 20px; /* Space above table */
+}
+
+th,
+td {
+  padding: 15px; /* Increased padding for better readability */
+  text-align: left; /* Align text to the left */
+  border-bottom: 1px solid #ddd; /* Light gray bottom border */
+}
+
+th {
+  background-color: #007bff; /* Blue background for header */
+  color: #fff; /* White text for header */
+  font-size: 18px; /* Increased font size for header */
+}
+
+tr:hover {
+  background-color: #e9f5ff; /* Light blue on hover for rows */
+}
+
+button {
+  padding: 10px 15px; /* Increased padding for buttons */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  background-color: #28a745; /* Green background */
+  color: #fff; /* White text */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+button:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+p {
+  text-align: center; /* Center align text */
+  font-size: 18px; /* Font size for paragraph */
+  color: #666; /* Gray color */
+  margin-top: 20px; /* Space above paragraph */
+}
